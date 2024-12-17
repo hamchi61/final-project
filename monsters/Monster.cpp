@@ -216,13 +216,13 @@ Monster::draw() {
 	GIFCenter *GIFC = GIFCenter::get_instance();
     ALGIF_ANIMATION *gif = GIFC->get(gifPath[static_cast<int>(type)]);
 	if (!gif) {
-        debug_log("GIF not found: %s\n", gifPath[static_cast<int>(type)].c_str());
+        //debug_log("GIF not found: %s\n", gifPath[static_cast<int>(type)].c_str());
         return;
     }
 	// 獲取當前幀位圖
     ALLEGRO_BITMAP *frame_bitmap = algif_get_frame_bitmap(gif, current_frame);
     if (!frame_bitmap) {
-        debug_log("Frame not found for GIF: %s\n", gifPath[static_cast<int>(type)].c_str());
+        //debug_log("Frame not found for GIF: %s\n", gifPath[static_cast<int>(type)].c_str());
         return;
     }
 	if (is_hit) {

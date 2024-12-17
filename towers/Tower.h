@@ -8,6 +8,7 @@
 #include <array>
 #include "../data/GIFCenter.h"
 #include "../algif5/algif.h"
+#include "../monsters/Monster.h"
 
 class Bullet;
 
@@ -63,7 +64,7 @@ public:
 	Tower(const Point &p, double attack_range, int attack_freq, TowerType type, int h);
 	virtual ~Tower() {}
 	virtual void update();
-	virtual bool attack(Object *target);
+	virtual bool attack(Monster *target);
 	void draw();
 	Rectangle get_region() const;
 	Rectangle get_attack_range() const;

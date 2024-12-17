@@ -101,9 +101,9 @@ Tower::update() {
  * @brief Check whether the tower can attack the target. If so, shoot a bullet to the target.
 */
 bool
-Tower::attack(Object *target) {
+Tower::attack(Monster *target) {
 	if(counter) return false;
-	if(!target->shape->overlap(get_attack_range())) return false;
+	if(!target->get_region().overlap(get_attack_range())) return false;
 	DataCenter *DC = DataCenter::get_instance();
 	SoundCenter *SC = SoundCenter::get_instance();
 	DC->towerBullets.emplace_back(create_bullet());
@@ -186,9 +186,6 @@ Tower::get_region() const {
 		shape->center_y() - h/2 + h
 	};
 }
-<<<<<<< HEAD
-//test test
-=======
 
 
 Rectangle
@@ -204,9 +201,9 @@ switch(type) {
 		} case TowerType::ARCHER: {
 			return {
 				shape->center_x()-30,
-				shape->center_y()-30,
+				shape->center_y()-40,
 				shape->center_x()+1000,
-				shape->center_y()+30
+				shape->center_y()+40
 			};
 		} case TowerType::CANON: {
 			return {
@@ -233,4 +230,3 @@ switch(type) {
 	}
 }
 
->>>>>>> f1fba50fa5b0b00a1ba182083ad482d1a296c910
