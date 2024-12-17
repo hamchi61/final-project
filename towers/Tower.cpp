@@ -201,9 +201,9 @@ switch(type) {
 		} case TowerType::ARCHER: {
 			return {
 				shape->center_x()-30,
-				shape->center_y()-40,
+				shape->center_y()-30,
 				shape->center_x()+1000,
-				shape->center_y()+40
+				shape->center_y()+30
 			};
 		} case TowerType::CANON: {
 			return {
