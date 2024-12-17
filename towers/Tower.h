@@ -63,14 +63,16 @@ public:
 	Tower(const Point &p, double attack_range, int attack_freq, TowerType type, int h);
 	virtual ~Tower() {}
 	virtual void update();
-	virtual bool attack(/*Object *target*/);
+	virtual bool attack(Object *target);
 	void draw();
 	Rectangle get_region() const;
+	Rectangle get_attack_range() const;
 	virtual Bullet *create_bullet(/*Object *target*/) = 0;
 	virtual const double attack_range() const = 0;
 	TowerType type;
 	bool planted = false;
 	int hp;
+	float placed_time = 0;
 private:
 	/**
 	 * @var attack_freq
